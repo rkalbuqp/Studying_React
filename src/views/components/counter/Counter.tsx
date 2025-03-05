@@ -1,6 +1,6 @@
 import { useCount } from "../../../app/hooks/useCount";
 import { cn } from "../../../app/utils/cn"; // A função cn
-import { Button } from "../button/Button";
+import { Button } from "./button/Button";
 import {
   button,
   buttonContainer,
