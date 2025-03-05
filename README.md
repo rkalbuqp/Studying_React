@@ -1,54 +1,111 @@
-# React + TypeScript + Vite
+# 🌙🚀 Studying React – Theme & Counter Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React project that implements a **theme switcher** and a **global counter** using **Context API**.  
+The theme preference persists in `localStorage`, and the counter updates globally across components.
 
-Currently, two official plugins are available:
+## 🎯 Objectives
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🚀 Challenge: Theme Manager with Context API
 
-## Expanding the ESLint configuration
+Create a **light/dark mode** switching system using **React** and **Context API**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+#### 📌 Requirements
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+✔️ Create a `ThemeContext` to store the current theme and provide a function to toggle it.  
+✔️ Use the context across multiple components in the application.  
+✔️ Implement a button to switch between **light** and **dark** mode.  
+✔️ Persist the selected theme in `localStorage` to maintain preferences after page reloads.  
+✔️ Style themes using **Tailwind CSS**.
+
+### 🚀 Challenge: Global Counter with Context API
+
+Create a **global counter** using **React** and **Context API**, allowing multiple components to access and modify its value.
+
+#### 📌 Requirements
+
+✔️ Create a `CounterContext` to store the counter value and provide functions to increment and decrement it.  
+✔️ Create two components:  
+&nbsp;&nbsp;&nbsp;&nbsp;📌 One to **display** the counter value.  
+&nbsp;&nbsp;&nbsp;&nbsp;📌 Another with **buttons** to increment and decrement the counter.  
+✔️ Ensure **real-time updates** across all components.
+
+## 🔧 Technologies Used
+
+- ⚛ **React** – Component-based UI library.
+- 🌍 **Context API** – State management without prop drilling.
+- 🎨 **Tailwind CSS** – Utility-first CSS framework for styling.
+- 💾 **localStorage** – Data persistence for theme preferences.
+- 🟦 **TypeScript** – Strongly typed JavaScript for improved development experience.
+- ⚡ **Vite** – Fast build tool for modern web applications.
+- ✅ **ESLint & Husky** – Code quality and pre-commit hooks.
+
+## 📂 Project Structure
+
+```
+Studying_React/
+├─ .husky/                 # Pre-commit hooks for linting and formatting
+├─ public/                 # Static assets
+├─ src/
+│  ├─ app/
+│  │  ├─ hooks/            # Custom hooks (useTheme, useCount)
+│  │  └─ utils/            # Utility functions (cn.ts)
+│  ├─ context/
+│  │  ├─ counterContext/   # Counter state management
+│  │  ├─ themeContext/     # Theme state management and persistence
+│  ├─ views/
+│  │  ├─ components/
+│  │  │  ├─ counter/       # Counter UI components
+│  │  │  ├─ themeSwitch/   # Theme toggle UI component
+│  │  └─ pages/
+│  │     └─ home/          # Home page component
+│  ├─ App.tsx              # Root component
+│  ├─ main.tsx             # Entry point
+├─ tailwind.config.ts      # Tailwind CSS configuration
+├─ vite.config.ts          # Vite configuration
+├─ tsconfig.json           # TypeScript configuration
+├─ eslint.config.js        # ESLint configuration
+├─ README.md               # Project documentation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 Installation & Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1️⃣ Clone the Repository
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+git clone https://github.com/your-username/Studying_React.git
+cd Studying_React
 ```
+
+### 2️⃣ Install Dependencies
+
+```sh
+npm install
+```
+
+### 3️⃣ Run the Project
+
+```sh
+npm run dev
+```
+
+🚀 Open [http://localhost:5173](http://localhost:5173) to see it in action!
+
+## 🚀 Features
+
+- **Theme Switcher**: Toggle between **light** and **dark** mode.
+- **Context API**: Centralized state management for both theme and counter.
+- **Persisted Theme**: Saves user preference using `localStorage`.
+- **Global Counter**: Accessible and modifiable from multiple components.
+- **Styled with Tailwind CSS** for a clean and modern UI.
+
+## 🛠 How It Works
+
+- The `ThemeContext` manages the current theme and stores it in `localStorage`.
+- The `CounterContext` provides functions to increment and decrement the counter.
+- Components like `ThemeSwitch` and `CounterControls` interact with these contexts to update UI dynamically.
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+💡 _Contributions and feedback are welcome!_ 🎉
