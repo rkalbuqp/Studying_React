@@ -1,5 +1,5 @@
 // src/components/Button/index.tsx
-import { cn } from "../../../app/utils/cn";
+import { cn } from "../../../../app/utils/cn";
 import { buttonVariants } from "./styles";
 import { ButtonProps } from "./types";
 

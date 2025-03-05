@@ -1,12 +1,15 @@
 import "./App.css";
-import { CountProvider } from "./context/counterContext/countContext";
-import Counter from "./views/components/counter/Counter";
+import { CountProvider } from "./context/counterContext/CountProvider";
+import { ThemeProvider } from "./context/themeContext/ThemeProvider";
+import { Home } from "./views/pages/home/Home";
 
 function App() {
   return (
-    <CountProvider>
-      <Counter />
-    </CountProvider>
+    <ThemeProvider>
+      <CountProvider>
+        <Home />
+      </CountProvider>
+    </ThemeProvider>
   );
 }
 
